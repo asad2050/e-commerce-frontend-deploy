@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Deployment Documentation for E-commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This document provides a brief overview of the deployment process for the e-commerce platform, which is a React app hosted on AWS.
 
-Currently, two official plugins are available:
+## Services Used
+- **Amazon S3**: Used to store the static files of the React app (dist folder).
+- **Amazon CloudFront**: Utilized as a content delivery network (CDN) to serve the app globally and improve loading speeds.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Deployment Steps
 
-## Expanding the ESLint configuration
+1. **Build the React App**
+   - Created an optimized production build using:
+     ```bash
+     npm run build
+     ```
+   - This command generated the `dist` folder containing the static files.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Upload to S3**
+   - Created an S3 bucket to store the contents of the `dist` folder.
+   - Uploaded all files from the `dist` folder to the S3 bucket.
 
-- Configure the top-level `parserOptions` property like this:
+3. **Configure CloudFront**
+   - Created a CloudFront distribution with the S3 bucket as the origin.
+   - Set up caching and enabled HTTPS to serve the app securely.
+   - Copy the bucket policy from CloudFront Distrubution after it has done been created and paste it in S3 Bucket Policy section.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+4. **Custom Domain (Optional)**
+   - **Recommendation**: If you want to use a custom domain, you must first own the domain.
+   - Once you have your domain, create an SSL certificate using **AWS Certificate Manager (ACM)** to enable HTTPS for your CloudFront distribution.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+5. **Live Link**
+   - The e-commerce platform is accessible at: [https://d2abqopzf80zfd.cloudfront.net]
+
+## Conclusion
+The deployment of the e-commerce platform on AWS is complete, with static files stored in S3 and served via CloudFront. For any questions or further assistance, feel free to reach out.

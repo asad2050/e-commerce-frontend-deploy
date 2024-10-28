@@ -30,7 +30,8 @@ This document provides a brief overview of the deployment process for the e-comm
    - Once you have your domain, create an SSL certificate using **AWS Certificate Manager (ACM)** to enable HTTPS for your CloudFront distribution.
 
 5. **Live Link**
-   - The e-commerce platform is accessible at: https://d2abqopzf80zfd.cloudfront.net
+   - **Primary Demo Link**:  https://d2abqopzf80zfd.cloudfront.net
+   - **Alternative Link** (if the primary link is inactive): [https://har-ans8.onrender.com](https://har-ans8.onrender.com)
 
 ## Conclusion
 The deployment of the e-commerce platform on AWS is complete, with static files stored in S3 and served via CloudFront. For any questions or further assistance, feel free to reach out.

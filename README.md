@@ -1,3 +1,10 @@
+### Project Information
+This project is part of an assessment for a Web Developer Internship at Hermaig Jewelers.
+
+### Demo
+   - **Primary Demo Link**:  https://d2abqopzf80zfd.cloudfront.net
+   - **Alternative Link** (if the primary link is inactive): [https://har-ans8.onrender.com](https://har-ans8.onrender.com)
+
 # Deployment Documentation for E-commerce Platform
 
 ## Overview

@@ -1,5 +1,5 @@
 ### Project Information
-This project is part of an assessment for a Web Developer Internship at Hermaig Jewelers.
+This project is part of an assessment for a Web Developer Internship at Hermaig Jewellers.
 
 ### Demo
    - **Primary Demo Link**:  https://d2abqopzf80zfd.cloudfront.net
